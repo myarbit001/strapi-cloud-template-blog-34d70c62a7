@@ -519,6 +519,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     singularName: 'blog';
     pluralName: 'blogs';
     displayName: 'blog';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -526,10 +527,14 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   attributes: {
     Title: Schema.Attribute.String;
     authorPic: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    authorName: Schema.Attribute.String;
+    author: Schema.Attribute.String;
     date: Schema.Attribute.Date;
-    Introduction: Schema.Attribute.Text;
+    shortDes: Schema.Attribute.Text;
     content: Schema.Attribute.Blocks;
+    featuresImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
